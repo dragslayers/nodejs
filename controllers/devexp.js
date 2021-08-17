@@ -6,7 +6,7 @@ exports.getDevExp = (req, res, next) => {
 
 exports.postDevExp = (req, res, next) => {
     const devexp = new DevExp({...req.body})
-    devexp.save().then(()=>res.status(201).json({message:"experience dev enregistré"}))
+    devexp.save().then(()=>res.status(201).json({message:"expérience dev enregistrée"}))
     .catch(error=>res.status(400).json(error));
 };
 
@@ -15,12 +15,12 @@ exports.putDevExp = (req, res, next) => {
         {_id:req.params.id},
         {...req.body,_id:req.params.id}
     )
-    .then(()=>res.status(200).json({message:"formation modifié petit"}))
+    .then(()=>res.status(200).json({message:"expérience dev modifiée"}))
     .catch((error)=>res.status(400).json({error}));
 };
 
 exports.deleteDevExp = (req, res, next) => {
     DevExp.deleteOne({_id:req.params.id})
-    .then(()=>res.status(200).json({message:"formation supprimé fiote"}))
+    .then(()=>res.status(200).json({message:"expérience dev supprimée"}))
     .catch((error)=>res.status(400).json({error}));
 };

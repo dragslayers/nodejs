@@ -16,13 +16,12 @@ mongoose
     .connect(
         `mongodb+srv://${process.env.NODE_LOGIN_MONGOOSE}:${process.env.NODE_PASSWORD_MONGOOSE}@cluster0.ohjbe.mongodb.net/${process.env.NODE_DBNAME_MONGOOSE}?retryWrites=true&w=majority`,
         {useNewUrlParser:true, useUnifiedTopology: true})
-    .then(() => console.log("Connexion reussi BG"))
-    .catch(() => console.log("connexion raté looser"));
+    .then(() => console.log("Connexion reussi"))
+    .catch(() => console.log("connexion raté"));
 
 app.use(cors());
 app.use(express.json());
 
-//header
 app.use('/api/header', headerRoutes);
 app.use("/api/formation",formationRoutes);
 app.use("/api/experience/devexp",devexpRoutes);

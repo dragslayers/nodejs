@@ -9,6 +9,6 @@ exports.putHeader = (req, res, next) => {
         {_id:req.params.id},
         {...req.body,_id:req.params.id}
     )
-    .then(()=>res.status(200).json({message:"formation modifié petit"}))
+    .then(()=>res.status(200).json({message:"en-tête modifiée"}))
     .catch((error)=>res.status(400).json({error}));
 };

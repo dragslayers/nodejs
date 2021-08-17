@@ -6,7 +6,7 @@ exports.getSoftSkill = (req, res, next) => {
 
 exports.postSoftSkill = (req, res, next) => {
     const softskill = new SoftSkill({...req.body})
-    softskill.save().then(()=>res.status(201).json({message:"compétence générales enregistré"}))
+    softskill.save().then(()=>res.status(201).json({message:"compétence générales enregistrées"}))
     .catch(error=>res.status(400).json(error));
 };
 
@@ -15,12 +15,12 @@ exports.putSoftSkill = (req, res, next) => {
         {_id:req.params.id},
         {...req.body,_id:req.params.id}
     )
-    .then(()=>res.status(200).json({message:"formation modifié petit"}))
+    .then(()=>res.status(200).json({message:"compétence générales modifiées"}))
     .catch((error)=>res.status(400).json({error}));
 };
 
 exports.deleteSoftSkill = (req, res, next) => {
     SoftSkill.deleteOne({_id:req.params.id})
-    .then(()=>res.status(200).json({message:"formation supprimé fiote"}))
+    .then(()=>res.status(200).json({message:"compétence générales supprimées"}))
     .catch((error)=>res.status(400).json({error}));
 };

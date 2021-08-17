@@ -6,7 +6,7 @@ exports.getFormation = (req, res, next) => {
 
 exports.postFormation = (req, res, next) => {
     const formation = new Formation({...req.body})
-    formation.save().then(()=>res.status(201).json({message:"formation enregistré"}))
+    formation.save().then(()=>res.status(201).json({message:"formation enregistrée"}))
     .catch(error=>res.status(400).json(error));
 };
 
@@ -15,12 +15,12 @@ exports.putFormation = (req, res, next) => {
         {_id:req.params.id},
         {...req.body,_id:req.params.id}
     )
-    .then(()=>res.status(200).json({message:"formation modifié petit"}))
+    .then(()=>res.status(200).json({message:"formation modifiée"}))
     .catch((error)=>res.status(400).json({error}));
 };
 
 exports.deleteFormation = (req, res, next) => {
     Formation.deleteOne({_id:req.params.id})
-    .then(()=>res.status(200).json({message:"formation supprimé fiote"}))
+    .then(()=>res.status(200).json({message:"formation supprimée"}))
     .catch((error)=>res.status(400).json({error}));
 };
