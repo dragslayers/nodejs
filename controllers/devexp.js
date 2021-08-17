@@ -1,4 +1,4 @@
-const DevExp = require("../models/Devexp");
+const DevExp = require("../models/DevExp");
 
 exports.getDevExp = (req, res, next) => {
     DevExp.find().then(devexps => res.status(200).json(devexps));
