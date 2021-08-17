@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
@@ -13,7 +14,7 @@ const app = express();
 
 mongoose
     .connect(
-        'mongodb+srv://mzhang:root1234@cluster0.ohjbe.mongodb.net/nodejs?retryWrites=true&w=majority',
+        `mongodb+srv://${process.env.NODE_LOGIN_MONGOOSE}:${process.env.NODE_PASSWORD_MONGOOSE}@cluster0.ohjbe.mongodb.net/${process.env.NODE_DBNAME_MONGOOSE}?retryWrites=true&w=majority`,
         {useNewUrlParser:true, useUnifiedTopology: true})
     .then(() => console.log("Connexion reussi BG"))
     .catch(() => console.log("connexion raté looser"));
