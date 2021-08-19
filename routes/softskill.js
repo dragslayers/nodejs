@@ -4,7 +4,7 @@ const router = express.Router();
 
 const softskillController = require("../controllers/softskill")
 
-router.get('/', softskillController.getSoftSkill);
+router.get('/:userId', softskillController.getSoftSkill);
 
 router.post('/', softskillController.postSoftSkill);
 

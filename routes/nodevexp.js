@@ -5,7 +5,7 @@ const router = express.Router();
 const nodevexpController = require("../controllers/nodevexp")
 
 
-router.get('/', nodevexpController.getNoDevExp);
+router.get('/:userId', nodevexpController.getNoDevExp);
 
 router.post('/', nodevexpController.postNoDevExp);
 

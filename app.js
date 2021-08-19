@@ -2,13 +2,13 @@ require('dotenv').config();
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
-const Header = require("./models/Header");
 const formationRoutes = require("./routes/formation");
 const devexpRoutes = require("./routes/devexp");
 const nodevexpRoutes = require("./routes/nodevexp");
 const hardskillRoutes = require("./routes/hardskill");
 const softskillRoutes = require("./routes/softskill");
 const headerRoutes = require("./routes/header");
+const userRoutes= require("./routes/user");
 
 const app = express();
 
@@ -23,6 +23,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/api/header', headerRoutes);
+app.use('/api/users', userRoutes);
 app.use("/api/formation",formationRoutes);
 app.use("/api/experience/devexp",devexpRoutes);
 app.use("/api/experience/nodevexp",nodevexpRoutes);

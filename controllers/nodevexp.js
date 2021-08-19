@@ -1,7 +1,7 @@
 const NoDevExp = require("../models/NoDevExp");
 
 exports.getNoDevExp = (req, res, next) => {
-    NoDevExp.find().then(nodevexps => res.status(200).json(nodevexps));
+    NoDevExp.find({userId:req.params.userId}).then(nodevexps => res.status(200).json(nodevexps));
 };
 
 exports.postNoDevExp = (req, res, next) => {

@@ -4,9 +4,7 @@ const router = express.Router();
 
 const devexpController = require("../controllers/devexp")
 
-//Experience Dev
-
-router.get('/', devexpController.getDevExp );
+router.get('/:userId', devexpController.getDevExp );
 
 router.post('/', devexpController.postDevExp );
 

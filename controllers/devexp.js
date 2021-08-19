@@ -1,7 +1,7 @@
 const DevExp = require("../models/DevExp");
 
 exports.getDevExp = (req, res, next) => {
-    DevExp.find().then(devexps => res.status(200).json(devexps));
+    DevExp.find({userId:req.params.userId}).then(devexps => res.status(200).json(devexps));
 };
 
 exports.postDevExp = (req, res, next) => {

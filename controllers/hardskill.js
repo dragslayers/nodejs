@@ -1,7 +1,7 @@
 const HardSkill = require("../models/HardSkill")
 
 exports.getHardSkill = (req, res, next) => {
-    HardSkill.find().then(hardskills => res.status(200).json(hardskills));
+    HardSkill.find({userId:req.params.userId}).then(hardskills => res.status(200).json(hardskills));
 };
 
 exports.postHardSkill = (req, res, next) => {

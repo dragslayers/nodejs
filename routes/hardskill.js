@@ -4,7 +4,7 @@ const router = express.Router();
 
 const hardskillController = require("../controllers/hardskill")
 
-router.get('/', hardskillController.getHardSkill);
+router.get('/:userId', hardskillController.getHardSkill);
 
 router.post('/', hardskillController.postHardSkill);
 

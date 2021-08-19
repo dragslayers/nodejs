@@ -1,7 +1,7 @@
 const SoftSkill = require("../models/SoftSkill")
 
 exports.getSoftSkill = (req, res, next) => {
-    SoftSkill.find().then(softskills => res.status(200).json(softskills));
+    SoftSkill.find({userId:req.params.userId}).then(softskills => res.status(200).json(softskills));
 }
 
 exports.postSoftSkill = (req, res, next) => {

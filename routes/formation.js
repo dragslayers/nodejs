@@ -4,7 +4,7 @@ const router = express.Router();
 
 const formationController = require("../controllers/formation")
 
-router.get('/', formationController.getFormation);
+router.get('/:userId', formationController.getFormation);
 
 router.post('/', formationController.postFormation);
 

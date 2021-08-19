@@ -5,6 +5,7 @@ const headerSchema = mongoose.Schema({
     phone:{type:String, required:true},
     mail:{type:String, required:true},
     portfolio:{type:String, required:true},
+    userId:{type:String, required:true},
 })
 
 module.exports=mongoose.model("Header",headerSchema);
